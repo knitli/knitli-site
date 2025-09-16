@@ -20,7 +20,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "posthog-js": "^1.266.0"
+    "posthog-js": "^1.266.0",
+    "wrangler": "^4.37.1"
   },
   "trustedDependencies": [
     "core-js"
