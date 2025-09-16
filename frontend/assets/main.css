@@ -1937,15 +1937,6 @@ body.is-instant::after {
 	background-position: center;
 }
 
-/* Hero title styling for typewriter background */
-#hero-title.text-component.style-hero {
-	font-size: 6rem !important;
-	font-weight: 900 !important;
-	color: #ffffff !important;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
-	text-align: center !important;
-	margin-bottom: 2rem !important;
-}
 
 @media(orientation: portrait) {
 	#container12.container-component.style-3 {
@@ -1954,15 +1945,6 @@ body.is-instant::after {
 		background-position: center;
 	}
 	
-	#hero-title.text-component.style-hero {
-		font-size: 4rem !important;
-	}
-}
-
-@media(max-width: 480px) {
-	#hero-title.text-component.style-hero {
-		font-size: 3rem !important;
-	}
 }
 
 .container-component.style-3:not(:first-child) {
