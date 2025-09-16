@@ -1937,6 +1937,15 @@ body.is-instant::after {
 	background-position: center;
 }
 
+/* Apply purple knit background to non-hero style-3 sections */
+#container13.container-component.style-3,
+#container07.container-component.style-3,
+#container10.container-component.style-3 {
+	background-image: url("images/purple_knit.webp");
+	background-size: cover;
+	background-position: center;
+}
+
 
 @media(orientation: portrait) {
 	#container12.container-component.style-3 {
