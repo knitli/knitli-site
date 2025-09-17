@@ -563,7 +563,7 @@ body.is-instant::after {
 	font-family: 'Geist Mono', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
-	font-size: 1em;
+	font-size: 1.175em;
 	line-height: 2.125;
 	font-weight: 600;
 }
