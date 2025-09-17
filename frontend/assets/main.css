@@ -1,5 +1,20 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote::before,blockquote::after,q::before,q::after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}body{-webkit-text-size-adjust:none}mark{background-color:transparent;color:inherit}input::-moz-focus-inner{border:0;padding:0}input[type="text"],input[type="email"],select,textarea{-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;appearance:none}
 
+:root {
+	--rust: #EA5932;
+	--darkest-purple: #0D030B;  /* from dark to lightest -- darkest-purple, auburgine, dark-purple */
+    --aubergine: #1E061B;  /* why not 'darker'? Because aubergine is *knitli purple* */
+	--section-yellow: #FFE500;
+	--dark-purple: #352134;
+	--cyan: #15a6cd;
+	--purple-blue: #3d15cb;
+	--yellow-green: #A4CB15;
+	--violet: #6939FF;
+	--isabelline: #F2ECE7;
+	--ivory: #FCF9F5;
+	--slate: #7B8D9C;
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -45,7 +60,7 @@ body {
 	min-width: 320px;
 	overflow-x: hidden;
 	word-wrap: break-word;
-	background-color: #0D030B;
+	background-color: var(--darkest-purple);
 }
 
 body::before {
@@ -67,7 +82,7 @@ body::before {
 }
 
 body::after {
-	background-color: #000000;
+	background-color: var(--darkest-purple);
 	content: '';
 	display: block;
 	pointer-events: none;
@@ -144,7 +159,7 @@ spoiler-text {
 }
 
 spoiler-text.active {
-	color: #FFFFFF;
+	color: var(--ivory);
 	cursor: text;
 }
 
@@ -357,7 +372,7 @@ body.is-instant::after {
 .text-component.style-3 {
 	text-align: right;
 	text-transform: uppercase;
-	color: #FFE500;
+	color: var(--section-yellow);
 	font-family: 'Geist Mono', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
@@ -367,12 +382,12 @@ body.is-instant::after {
 }
 
 .text-component.style-3 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-3 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -395,7 +410,7 @@ body.is-instant::after {
 .text-component.style-4 {
 	text-align: left;
 	text-transform: uppercase;
-	color: #FCF9F5;
+	color: var(--ivory);
 	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
 	padding-left: 3.375rem;
 	padding-right: 0;
@@ -412,7 +427,7 @@ body.is-instant::after {
 }
 
 .text-component.style-4 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -439,7 +454,7 @@ body.is-instant::after {
 
 .text-component.style-7 {
 	text-align: left;
-	color: #FCF9F5;
+	color: var(--ivory);
 	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
 	letter-spacing: 0.075rem;
 	width: calc(100% + 0.075rem);
@@ -449,12 +464,12 @@ body.is-instant::after {
 }
 
 .text-component.style-7 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-7 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -469,7 +484,7 @@ body.is-instant::after {
 .text-component.style-16 {
 	text-align: center;
 	text-transform: uppercase;
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
 	letter-spacing: -0.025rem;
 	width: 100%;
@@ -479,7 +494,7 @@ body.is-instant::after {
 }
 
 .text-component.style-16 strong {
-	color: #15A6CD;
+	color: var(--cyan);
 }
 
 .text-component.style-16 mark {
@@ -488,7 +503,7 @@ body.is-instant::after {
 }
 
 .text-component.style-16 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -510,7 +525,7 @@ body.is-instant::after {
 
 .text-component.style-10 {
 	text-align: center;
-	color: #FCF9F5;
+	color: var(--ivory);
 	font-family: 'Inconsolata', monospace;
 	letter-spacing: 0.075rem;
 	width: calc(100% + 0.075rem);
@@ -520,12 +535,12 @@ body.is-instant::after {
 }
 
 .text-component.style-10 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-10 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -539,7 +554,7 @@ body.is-instant::after {
 
 .text-component.style-11 {
 	text-transform: uppercase;
-	color: #3D15CB;
+	color: var(--purple-blue);
 	font-family: 'Geist Mono', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
@@ -550,16 +565,16 @@ body.is-instant::after {
 
 .text-component.style-11 u {
 	text-decoration: none;
-	box-shadow: 0 0.125em 0 0 #EA5932;
+	box-shadow: 0 0.125em 0 0 var(--rust);
 }
 
 .text-component.style-11 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-11 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -582,7 +597,7 @@ body.is-instant::after {
 .text-component.style-12 {
 	text-align: left;
 	text-transform: uppercase;
-	color: #352134;
+	color: var(--dark-purple);
 	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -596,7 +611,7 @@ body.is-instant::after {
 }
 
 .text-component.style-12 u {
-	text-decoration-color: #EA5932;
+	text-decoration-color: var(--rust);
 }
 
 .text-component.style-12 mark {
@@ -605,7 +620,7 @@ body.is-instant::after {
 }
 
 .text-component.style-12 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -628,7 +643,7 @@ body.is-instant::after {
 .text-component.style-13 {
 	text-align: center;
 	text-transform: uppercase;
-	color: #000000;
+	color: var(--darkest-purple);
 	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
 	padding-left: 2.625rem;
 	padding-right: 2.625rem;
@@ -638,7 +653,7 @@ body.is-instant::after {
 	font-size: 2.25em;
 	line-height: 1.25;
 	font-weight: 400;
-	background-image: linear-gradient(122deg, #E30909 0%, #000000 100%);
+	background-image: linear-gradient(122deg, #E30909 0%, var(--darkest-purple) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -649,7 +664,7 @@ body.is-instant::after {
 }
 
 .text-component.style-13 u {
-	text-decoration-color: #EA5932;
+	text-decoration-color: var(--rust);
 }
 
 .text-component.style-13 mark {
@@ -658,7 +673,7 @@ body.is-instant::after {
 }
 
 .text-component.style-13 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -672,7 +687,7 @@ body.is-instant::after {
 }
 
 .text-component.style-13 span.p {
-	background-image: linear-gradient(122deg, #E30909 0%, #000000 100%);
+	background-image: linear-gradient(122deg, #E30909 0%, var(--darkest-purple) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent !important;
@@ -689,7 +704,7 @@ body.is-instant::after {
 .text-component.style-22 {
 	text-align: center;
 	text-transform: uppercase;
-	color: #352134;
+	color: var(--dark-purple);
 	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -703,7 +718,7 @@ body.is-instant::after {
 }
 
 .text-component.style-22 u {
-	text-decoration-color: #3D15CB;
+	text-decoration-color: var(--purple-blue);
 }
 
 .text-component.style-22 mark {
@@ -712,7 +727,7 @@ body.is-instant::after {
 }
 
 .text-component.style-22 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -734,7 +749,7 @@ body.is-instant::after {
 
 .text-component.style-5 {
 	text-align: left;
-	color: #1E061B;
+	color: var(--aubgergine);
 	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -748,12 +763,12 @@ body.is-instant::after {
 }
 
 .text-component.style-5 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-5 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -775,11 +790,11 @@ body.is-instant::after {
 
 .text-component.style-20 {
 	text-align: left;
-	color: #1E061B;
+	color: var(--aubgergine);
 	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
-	font-size: 0.875em;
+	font-size: 0.75em;
 	line-height: 1.875;
 	font-weight: 400;
 }
@@ -789,12 +804,12 @@ body.is-instant::after {
 }
 
 .text-component.style-20 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-20 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -826,18 +841,113 @@ body.is-instant::after {
 	font-weight: 600;
 }
 
+/* Custom styling for the "Open Source First" index card */
+#text47.text-component.style-19 {
+	position: absolute;
+	top: -2rem;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 90vw;
+	max-width: 600px;
+	z-index: 10;
+	
+	/* Index card styling */
+	background-color: var(--ivory);
+	color: var(--aubergine);
+	padding: 1.25rem 2rem;
+	border-radius: 8px;
+	box-shadow: 
+		0 2px 8px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.15);
+	border: 1px solid rgba(30, 6, 27, 0.1);
+	
+	/* Text styling */
+	text-align: center;
+	font-size: 0.9em;
+	line-height: 1.6;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/* Responsive adjustments for the index card */
+@media (min-width: 768px) {
+	#text47.text-component.style-19 {
+		width: 70vw;
+		max-width: 500px;
+		padding: 1.5rem 2.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	#text47.text-component.style-19 {
+		width: 50vw;
+		max-width: 600px;
+		padding: 1.75rem 3rem;
+	}
+}
+
+/* Add padding to the container to accommodate the index card */
+#container03.container-component {
+	padding-top: 3rem;
+}
+
+/* Fix bullet points and list formatting in container03 */
+#container03 .text-component.style-21 {
+	list-style: none;
+	padding-left: 0;
+}
+
+#container03 .text-component.style-21 li {
+	position: relative;
+	padding-left: 1.5rem;
+	margin-bottom: 0.75rem;
+	display: list-item;
+}
+
+#container03 .text-component.style-21 li::before {
+	content: "•";
+	color: var(--violet);
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	font-size: 1.2em;
+}
+
+/* Reduce spacing between headings and supporting text */
+#container03 .text-component.style-1:not(:last-child) {
+	margin-bottom: 2rem !important;
+}
+
+/* Align CodeWeaver and Thread headings properly */
+#container03 .inner > div {
+	vertical-align: top;
+}
+
+#container03 .text-component.style-1 {
+	margin-top: 0 !important;
+}
+
+/* Remove the empty paragraph spacing that pushes Thread column down */
+#text49.text-component.style-19 {
+	display: none;
+}
+
 .text-component.style-19 u {
 	text-decoration: none;
-	box-shadow: 0 0.125em 0 0 #EA5932;
+	box-shadow: 0 0.125em 0 0 var(--rust);
 }
 
 .text-component.style-19 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-19 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -862,16 +972,16 @@ body.is-instant::after {
 
 .text-component.style-6 u {
 	text-decoration: none;
-	box-shadow: 0 0.125em 0 0 #EA5932;
+	box-shadow: 0 0.125em 0 0 var(--rust);
 }
 
 .text-component.style-6 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-6 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -894,7 +1004,7 @@ body.is-instant::after {
 .text-component.style-1 {
 	text-align: left;
 	text-transform: uppercase;
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -908,7 +1018,7 @@ body.is-instant::after {
 }
 
 .text-component.style-1 u {
-	text-decoration-color: #EA5932;
+	text-decoration-color: var(--rust);
 }
 
 .text-component.style-1 mark {
@@ -917,7 +1027,7 @@ body.is-instant::after {
 }
 
 .text-component.style-1 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -939,7 +1049,7 @@ body.is-instant::after {
 
 .text-component.style-21 {
 	text-align: left;
-	color: #1E061B;
+	color: var(--aubgergine);
 	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -953,12 +1063,12 @@ body.is-instant::after {
 }
 
 .text-component.style-21 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-21 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
@@ -970,32 +1080,47 @@ body.is-instant::after {
 	margin-top: 1rem;
 }
 
+.text-component.style-21 ul li {
+	position: relative;
+	padding-left: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.text-component.style-21 ul li::before {
+	content: "•";
+	color: var(--violet);
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
 .text-component.style-15 {
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
-	font-size: 1em;
+	font-size: 1.175em;
 	line-height: 1.875;
 	font-weight: 400;
 }
 
 .text-component.style-15 strong {
-	color: #EA5932;
+	color: var(--rust);
 }
 
 .text-component.style-15 mark {
-	color: #FFFFFF;
+	color: var(--ivory);
 	background-color: transparent;
 }
 
 .text-component.style-15 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: underline;
 }
 
 .text-component.style-15 a:hover {
-	color: #6A00FF;
+	color: var(--purple-blue);
 }
 
 .text-component.style-15 span.p:nth-child(n + 2) {
@@ -1004,7 +1129,7 @@ body.is-instant::after {
 
 .text-component.style-8 {
 	text-transform: uppercase;
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
 	letter-spacing: -0.025rem;
 	width: 100%;
@@ -1014,12 +1139,12 @@ body.is-instant::after {
 }
 
 .text-component.style-8 mark {
-	color: #0D101D;
+	color: var(--darkest-purple);
 	background-color: transparent;
 }
 
 .text-component.style-8 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -1041,7 +1166,7 @@ body.is-instant::after {
 
 .text-component.style-17 {
 	text-transform: uppercase;
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -1064,7 +1189,7 @@ body.is-instant::after {
 }
 
 .text-component.style-17 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -1086,7 +1211,7 @@ body.is-instant::after {
 
 .text-component.style-18 {
 	text-transform: uppercase;
-	color: #F2ECE7;
+	color: var(--isabelline);
 	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -1100,7 +1225,7 @@ body.is-instant::after {
 }
 
 .text-component.style-18 u {
-	text-decoration-color: #FFA187;
+	text-decoration-color: var(--yellow-green);
 }
 
 .text-component.style-18 mark {
@@ -1109,7 +1234,7 @@ body.is-instant::after {
 }
 
 .text-component.style-18 a {
-	color: #FFFFFF;
+	color: var(--ivory);
 	text-decoration: none;
 }
 
@@ -1186,8 +1311,8 @@ body.is-instant::after {
 }
 
 .form-component select option {
-	background-color: white;
-	color: black;
+	background-color: var(--ivory);
+	color: var(--darkest-purple);
 }
 
 .form-component select::-ms-expand {
@@ -1377,7 +1502,7 @@ body.is-instant::after {
 	line-height: 1.5;
 	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
 	font-weight: 400;
-	color: #151515;
+	color: var(--darkest-purple);
 }
 
 .form-component.style-2 .field button {
@@ -1385,12 +1510,12 @@ body.is-instant::after {
 	height: 3.5rem;
 	width: 3.5rem;
 	border-radius: 0.24rem;
-	background-color: #FFE500;
+	background-color: var(--section-yellow);
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .form-component.style-2 .field button svg {
-	fill: #000000;
+	fill: var(--darkest-purple);
 	transition: fill 0.25s ease;
 }
 
@@ -1401,12 +1526,12 @@ body.is-instant::after {
 	padding-left: calc(0.025rem + 1.53125rem);
 	font-weight: 400;
 	border-radius: 0.375rem;
-	color: #1E061B;
-	background-color: #FCF9F5;
+	color: var(--aubgergine);
+	background-color: var(--ivory);
 }
 
 .form-component.style-2 input[type="text"]:focus, .form-component.style-2 input[type="email"]:focus, .form-component.style-2 input[type="tel"]:focus, .form-component.style-2 input[type="number"]:focus, .form-component.style-2 textarea:focus, .form-component.style-2 select:focus, .form-component.style-2 .file:focus, .form-component.style-2 .date.focus {
-	box-shadow: 0 0 0 1px #FFE500, inset 0 0 0 1px #FFE500;
+	box-shadow: 0 0 0 1px var(--section-yellow), inset 0 0 0 1px var(--section-yellow);
 }
 
 .form-component.style-2 input[type="text"], .form-component.style-2 input[type="email"], .form-component.style-2 input[type="tel"], .form-component.style-2 input[type="number"], .form-component.style-2 select, .form-component.style-2 .file, .form-component.style-2 .date {
@@ -1430,8 +1555,8 @@ body.is-instant::after {
 
 .form-component.style-2 input[type="checkbox"] + label::before {
 	border-radius: 0.375rem;
-	color: #1E061B;
-	background-color: #FCF9F5;
+	color: var(--aubgergine);
+	background-color: var(--ivory);
 	background-size: 1.859375rem;
 	height: 3.28125rem;
 	width: 3.28125rem;
@@ -1443,7 +1568,7 @@ body.is-instant::after {
 }
 
 .form-component.style-2 input[type="checkbox"]:focus + label::before {
-	box-shadow: 0 0 0 1px #FFE500, inset 0 0 0 1px #FFE500;
+	box-shadow: 0 0 0 1px var(--section-yellow), inset 0 0 0 1px var(--section-yellow);
 }
 
 .form-component.style-2 .number > input[type="number"] {
@@ -1490,7 +1615,7 @@ body.is-instant::after {
 	letter-spacing: 0.025rem;
 	padding-left: 0.025rem;
 	font-weight: 400;
-	color: #000000;
+	color: var(--darkest-purple);
 }
 
 .form-component.style-2 .actions button {
@@ -1508,15 +1633,15 @@ body.is-instant::after {
 	font-weight: 500;
 	border-radius: 2.5rem;
 	flex-direction: row-reverse;
-	background-color: #FFE500;
-	color: #000000;
+	background-color: var(--section-yellow);
+	color: var(--darkest-purple);
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 	position: relative;
 }
 
 .form-component.style-2 .actions button svg {
 	display: block;
-	fill: #000000;
+	fill: var(--darkest-purple);
 	flex-grow: 0;
 	flex-shrink: 0;
 	height: 100%;
@@ -1575,32 +1700,32 @@ body.is-instant::after {
 }
 
 .form-component.style-2 ::-webkit-input-placeholder {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
 .form-component.style-2 :-moz-placeholder {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
 .form-component.style-2 ::-moz-placeholder {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
 .form-component.style-2 :-ms-input-placeholder {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
 .form-component.style-2 .file[data-filename=""]::before {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
 .form-component.style-2 .date[data-value=""]::before {
-	color: #1E061B;
+	color: var(--aubgergine);
 	opacity: 0.55;
 }
 
@@ -1629,7 +1754,7 @@ body.is-instant::after {
 
 .divider-component.style-1::before {
 	width: 10rem;
-	background-color: #FFE500;
+	background-color: var(--section-yellow);
 	height: 1px;
 	border-radius: 0px;
 }
@@ -1683,14 +1808,14 @@ body.is-instant::after {
 	border-radius: 100%;
 	height: 2em;
 	width: 2em;
-	background-color: #FFE503;
+	background-color: var(--section-yellow);
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .icons-component.style-2 > li > a > svg {
 	height: 60%;
 	width: 60%;
-	fill: #000000;
+	fill: var(--darkest-purple);
 	transition: fill 0.25s ease;
 }
 
@@ -1715,14 +1840,14 @@ body.is-instant::after {
 	border-radius: 100%;
 	height: 2em;
 	width: 2em;
-	background-color: #1E061B;
+	background-color: var(--aubgergine);
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .icons-component.style-4 > li > a > svg {
 	height: 60%;
 	width: 60%;
-	fill: #FFFFFF;
+	fill: var(--ivory);
 	transition: fill 0.25s ease;
 }
 
@@ -1739,11 +1864,11 @@ body.is-instant::after {
 }
 
 .icons-component.instance-2 > li > a.n01 {
-	background-color: #1E061B;
+	background-color: var(--aubgergine);
 }
 
 .icons-component.instance-2 > li > a.n01:hover {
-	background-color: #15A6CD !important;
+	background-color: var(--cyan) !important;
 }
 
 .icons-component.style-1 {
@@ -1762,7 +1887,7 @@ body.is-instant::after {
 .icons-component.style-1 > li > a > svg {
 	height: 60%;
 	width: 60%;
-	fill: #FFE503;
+	fill: var(--section-yellow);
 	transition: fill 0.25s ease;
 }
 
@@ -1779,11 +1904,11 @@ body.is-instant::after {
 }
 
 .icons-component.instance-3 > li > a.n01 > svg {
-	fill: #EA5932;
+	fill: var(--rust);
 }
 
 .icons-component.instance-3 > li > a.n01:hover {
-	background-color: #3D15CB !important;
+	background-color: var(--purple-blue) !important;
 }
 
 .buttons-component {
@@ -1829,17 +1954,17 @@ body.is-instant::after {
 	font-size: 0.875em;
 	font-weight: 800;
 	border-radius: 1.75rem;
-	box-shadow: 0rem 0rem 0rem 0.375rem #352134;
+	box-shadow: 0rem 0rem 0rem 0.375rem var(--dark-purple);
 	flex-direction: row-reverse;
 	justify-content: flex-end;
-	background-color: #EA5932;
-	color: #352134;
+	background-color: var(--rust);
+	color: var(--dark-purple);
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .buttons-component.style-2 > li > a > svg {
 	display: block;
-	fill: #352134;
+	fill: var(--dark-purple);
 	flex-grow: 0;
 	flex-shrink: 0;
 	height: 100%;
@@ -1865,16 +1990,16 @@ body.is-instant::after {
 }
 
 .buttons-component.instance-8 > li > a.n01 > svg {
-	fill: #3D15CB;
+	fill: var(--purple-blue);
 }
 
 .buttons-component.instance-8 > li > a.n01 {
-	background-color: #EA5932;
-	color: #1E061B;
+	background-color: var(--rust);
+	color: var(--aubgergine);
 }
 
 .buttons-component.instance-8 > li > a.n01:hover {
-	background-color: #15A6CD !important;
+	background-color: var(--cyan) !important;
 }
 
 .container-component {
@@ -1937,6 +2062,15 @@ body.is-instant::after {
 	background-position: center;
 }
 
+/* Position the button 75% down within the container */
+#container12 .wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: 25vh;
+}
+
 /* Apply purple knit background to non-hero style-3 sections */
 #container13.container-component.style-3,
 #container07.container-component.style-3,
@@ -1946,6 +2080,12 @@ body.is-instant::after {
 	background-position: center;
 }
 
+#container01.container-component.style-2 {
+	background-image: url("images/ivory-knit.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat-y;
+}
 
 @media(orientation: portrait) {
 	#container12.container-component.style-3 {
@@ -2098,11 +2238,11 @@ body.is-instant::after {
 	min-height: var(--viewport-height);
 	align-items: center;
 	justify-content: center;
-	background-color: #1E061B;
-	border-color: #F2ECE7;
+	background-color: var(--aubgergine);
+	border-color: var(--isabelline);
 	border-style: dashed;
 	border-top-width: 18px;
-	box-shadow: 0rem 0rem 0rem 0rem #F2ECE7;
+	box-shadow: 0rem 0rem 0rem 0rem var(--isabelline);
 }
 
 .container-component.style-1:not(:first-child) {
@@ -2255,7 +2395,7 @@ body.is-instant::after {
 	min-height: var(--viewport-height);
 	align-items: center;
 	justify-content: center;
-	background-color: #FFFFFF;
+	background-color: var(--ivory);
 }
 
 .container-component.style-2:not(:first-child) {
@@ -2416,8 +2556,8 @@ body.is-instant::after {
 	min-height: var(--viewport-height);
 	align-items: center;
 	justify-content: center;
-	background-color: #15A6CD;
-	border-color: #F2ECE7;
+	background-color: var(--cyan);
+	border-color: var(--isabelline);
 	border-style: dashed;
 	border-top-width: 18px;
 }
@@ -2487,7 +2627,7 @@ body.is-instant::after {
 }
 
 .container-component.style-4.columns > .wrapper > .inner > *::before {
-	border-left: dashed 18px #F2ECE7;
+	border-left: dashed 18px var(--isabelline);
 	content: '';
 	display: block;
 	margin-left: calc((var(--gutters) * -0.5) - 9px);
@@ -2621,7 +2761,7 @@ body.is-instant::after {
 	width: 23.25rem;
 	height: 40.5rem;
 	border-radius: 0.375rem;
-	border-color: #1E061B;
+	border-color: var(--aubgergine);
 	border-style: solid;
 	border-width: 9px;
 	transition: none;
@@ -3015,8 +3155,6 @@ body.is-instant::after {
 		width: 1.5625em;
 	}
 	
-	
-	
 	.container-component.style-3:not(:first-child) {
 		margin-top: 0rem !important;
 	}
@@ -3221,8 +3359,6 @@ body.is-instant::after {
 		width: 100% !important;
 	}
 	
-	
-	
 	.container-component.style-2:not(:first-child) {
 		margin-top: 0rem !important;
 	}
@@ -3339,8 +3475,6 @@ body.is-instant::after {
 		width: 100% !important;
 	}
 	
-	
-	
 	.container-component.style-4:not(:first-child) {
 		margin-top: 0rem !important;
 	}
@@ -3381,7 +3515,7 @@ body.is-instant::after {
 	}
 	
 	.container-component.style-4.columns > .wrapper > .inner > *::before {
-		border-top: dashed 18px #F2ECE7 !important;
+		border-top: dashed 18px var(--isabelline) !important;
 		height: 0 !important;
 		margin-left: 0 !important;
 		top: auto !important;
@@ -3503,14 +3637,6 @@ body.is-instant::after {
 		max-width: 32rem;
 		width: 100%;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	.image-component.style-1 > .frame {
 		height: 30rem !important;

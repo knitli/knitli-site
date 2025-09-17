@@ -1,3 +1,8 @@
 [tools]
 node = "24"
 "npm:wrangler" = "latest"
+
+[tasks]
+deploy = "wrangler pages deploy frontend"
+
+serve = "npm run dev"
