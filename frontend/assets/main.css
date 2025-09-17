@@ -75,9 +75,14 @@ body::before {
 	transform: scale(1);
 	width: 100vw;
 	z-index: 0;
-	background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20rect%20%7B%20fill%3A%20%23352134%3B%20opacity%3A%200.5%3B%20%7D%20%3C%2Fstyle%3E%20%3Crect%20x%3D%220%25%22%20y%3D%220%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20%2F%3E%20%3Crect%20x%3D%2250%25%22%20y%3D%2250%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20%2F%3E%20%3Crect%20x%3D%2250%25%22%20y%3D%220%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20style%3D%22opacity%3A%201%22%20%2F%3E%3C%2Fsvg%3E');
-	background-size: 1536px;
-	background-position: center;
+	/* Subtle paper texture pattern - more organic */
+	background-image: 
+		radial-gradient(circle at 20% 80%, rgba(242, 236, 231, 0.03) 1px, transparent 1px),
+		radial-gradient(circle at 80% 20%, rgba(242, 236, 231, 0.02) 1px, transparent 1px),
+		radial-gradient(circle at 40% 40%, rgba(242, 236, 231, 0.015) 2px, transparent 2px),
+		url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20rect%20%7B%20fill%3A%20%23352134%3B%20opacity%3A%200.4%3B%20%7D%20%3C%2Fstyle%3E%20%3Crect%20x%3D%220%25%22%20y%3D%220%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20%2F%3E%20%3Crect%20x%3D%2250%25%22%20y%3D%2250%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20%2F%3E%20%3Crect%20x%3D%2250%25%22%20y%3D%220%25%22%20width%3D%2250%25%22%20height%3D%2250%25%22%20style%3D%22opacity%3A%200.8%22%20%2F%3E%3C%2Fsvg%3E');
+	background-size: 300px, 450px, 600px, 1536px;
+	background-position: 0 0, 100px 200px, 300px 100px, center;
 	background-repeat: repeat;
 }
 
@@ -3781,4 +3786,319 @@ body.is-instant::after {
 	.image-component.style-1 > .frame {
 		height: 26.25rem !important;
 	}
+}
+
+/* ==========================================
+   CRAFTED DESIGN ENHANCEMENTS
+   Implementing "Grandmother's Kitchen Table" aesthetic
+   ========================================== */
+
+/* Coffee ring stains on the "Learning Trap" slide - Multiple overlapping rings */
+.container-component.instance-1::before {
+	content: '';
+	position: absolute;
+	top: 25%;
+	right: 8%;
+	width: 12rem;
+	height: 12rem;
+	border-radius: 50%;
+	border: 4px solid rgba(234, 89, 50, 0.3);
+	box-shadow: 
+		inset 0 0 40px rgba(234, 89, 50, 0.15),
+		0 0 0 12px rgba(234, 89, 50, 0.08),
+		0 0 0 20px rgba(234, 89, 50, 0.04);
+	pointer-events: none;
+	z-index: 1;
+	transform: rotate(-8deg);
+}
+
+.container-component.instance-1::after {
+	content: '';
+	position: absolute;
+	top: 22%;
+	right: 12%;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	border: 3px solid rgba(234, 89, 50, 0.25);
+	box-shadow: 
+		inset 0 0 35px rgba(234, 89, 50, 0.12),
+		0 0 0 10px rgba(234, 89, 50, 0.06),
+		0 0 0 16px rgba(234, 89, 50, 0.03);
+	pointer-events: none;
+	z-index: 2;
+	transform: rotate(15deg);
+}
+
+/* Third overlapping coffee ring for authentic multiple-cup-placement effect */
+.container-component.instance-1 .wrapper::before {
+	content: '';
+	position: absolute;
+	top: 28%;
+	right: 6%;
+	width: 9rem;
+	height: 9rem;
+	border-radius: 50%;
+	border: 2px solid rgba(234, 89, 50, 0.2);
+	box-shadow: 
+		inset 0 0 30px rgba(234, 89, 50, 0.1),
+		0 0 0 8px rgba(234, 89, 50, 0.05),
+		0 0 0 14px rgba(234, 89, 50, 0.025);
+	pointer-events: none;
+	z-index: 1;
+	transform: rotate(-25deg);
+}
+
+/* Hand-drawn style underlines for emphasis */
+strong {
+	position: relative;
+}
+
+/* Apply hand-drawn underlines to key emphasis text */
+.text-component strong[style*="color: #15a6cd"],
+.text-component strong[style*="color: #DACC3E"] {
+	text-decoration: none !important;
+}
+
+.text-component strong[style*="color: #15a6cd"]::after,
+.text-component strong[style*="color: #DACC3E"]::after {
+	content: '';
+	position: absolute;
+	bottom: -3px;
+	left: -4px;
+	right: -4px;
+	height: 8px;
+	background: currentColor;
+	opacity: 0.6;
+	border-radius: 4px 2px 3px 2px;
+	transform: rotate(-1deg);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Tactile button enhancements - Made much more noticeable */
+.buttons-component a,
+.form-component button {
+	position: relative;
+	transition: all 0.3s ease;
+	border-radius: 8px 14px 10px 12px !important; /* Much more imperfect rounded corners */
+	box-shadow: 
+		0 4px 12px rgba(0, 0, 0, 0.25),
+		inset 0 2px 0 rgba(255, 255, 255, 0.2),
+		inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+	transform: rotate(-0.8deg);
+}
+
+.buttons-component a:hover,
+.form-component button:hover {
+	transform: translateY(-3px) rotate(0.5deg) scale(1.02);
+	box-shadow: 
+		0 8px 20px rgba(0, 0, 0, 0.3),
+		inset 0 2px 0 rgba(255, 255, 255, 0.25),
+		inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.buttons-component a:active,
+.form-component button:active {
+	transform: translateY(2px) rotate(-0.3deg) scale(0.98);
+	box-shadow: 
+		0 2px 6px rgba(0, 0, 0, 0.3),
+		inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Paper texture overlays for sections */
+.container-component::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: 
+		radial-gradient(circle at 45% 25%, rgba(242, 236, 231, 0.02) 1px, transparent 1px),
+		radial-gradient(circle at 75% 80%, rgba(242, 236, 231, 0.015) 1px, transparent 1px);
+	background-size: 150px 150px, 200px 200px;
+	background-position: 0 0, 50px 50px;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Organic asymmetric margins for breathing room - Much more noticeable */
+.text-component.style-16 {
+	margin-left: -8px;
+	transform: rotate(-0.8deg);
+}
+
+.text-component.style-17,
+.text-component.style-18 {
+	margin-left: 6px;
+	transform: rotate(0.4deg);
+}
+
+/* Hand-lettered style emphasis for headers */
+.text-component.style-1,
+.text-component.style-4 {
+	text-shadow: 1px 1px 0 rgba(30, 6, 27, 0.3);
+	letter-spacing: 0.01em;
+}
+
+/* Margin notes style for small text */
+.text-component.style-20 {
+	position: relative;
+	transform: rotate(-0.2deg);
+	opacity: 0.9;
+}
+
+.text-component.style-20::before {
+	content: '*';
+	position: absolute;
+	left: -1.5em;
+	top: 0;
+	color: var(--rust);
+	font-family: 'Special Elite', cursive;
+	transform: rotate(5deg);
+}
+
+/* Subtle ink-like quality for text */
+.text-component {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Workbench-style dividers */
+.divider-component.style-1::before {
+	background: linear-gradient(
+		to right,
+		transparent 0%,
+		var(--isabelline) 20%,
+		var(--isabelline) 80%,
+		transparent 100%
+	);
+	height: 2px;
+	border-radius: 1px;
+	transform: rotate(-0.1deg);
+}
+
+/* Enhance robot images with obvious frame effects */
+.image-component .frame {
+	border-radius: 15px 25px 18px 22px !important;
+	box-shadow: 
+		0 8px 24px rgba(0, 0, 0, 0.2),
+		inset 0 2px 0 rgba(255, 255, 255, 0.15),
+		inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+	transform: rotate(-1.2deg);
+	transition: transform 0.4s ease;
+	border: 3px solid rgba(242, 236, 231, 0.3);
+}
+
+.image-component .frame:hover {
+	transform: rotate(0.5deg) scale(1.05);
+	box-shadow: 
+		0 12px 32px rgba(0, 0, 0, 0.25),
+		inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Bookish page curl effect */
+.container-component.style-4::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background: linear-gradient(
+		-45deg,
+		transparent 45%,
+		rgba(242, 236, 231, 0.3) 50%,
+		rgba(242, 236, 231, 0.1) 55%,
+		transparent 60%
+	);
+	pointer-events: none;
+	z-index: 2;
+}
+
+/* Enhance form inputs with paper-like quality */
+.form-component input,
+.form-component textarea {
+	border-radius: 4px 6px 4px 6px;
+	box-shadow: 
+		inset 2px 2px 4px rgba(0, 0, 0, 0.05),
+		0 1px 0 rgba(255, 255, 255, 0.1);
+	background-image: 
+		linear-gradient(to bottom, 
+			rgba(252, 249, 245, 0.02) 0%,
+			rgba(242, 236, 231, 0.01) 100%
+		);
+}
+
+.form-component input:focus,
+.form-component textarea:focus {
+	transform: rotate(0.1deg);
+	box-shadow: 
+		inset 2px 2px 6px rgba(0, 0, 0, 0.08),
+		0 0 0 2px rgba(234, 89, 50, 0.2),
+		0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add subtle noise texture to dark backgrounds */
+.container-component.style-3,
+.container-component.style-4 {
+	background-image: 
+		radial-gradient(circle at 30% 70%, rgba(242, 236, 231, 0.01) 1px, transparent 1px),
+		radial-gradient(circle at 70% 30%, rgba(242, 236, 231, 0.008) 1px, transparent 1px);
+	background-size: 180px 180px, 240px 240px;
+	background-position: 0 0, 60px 60px;
+}
+
+/* Workshop drawer-style navigation icons */
+.icons-component a {
+	transition: all 0.2s ease;
+	border-radius: 50% 48% 50% 52%;
+	transform: rotate(-0.5deg);
+}
+
+.icons-component a:hover {
+	transform: rotate(0deg) scale(1.1);
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Additional ink blot decorative elements for more visible character */
+.container-component.instance-2::before {
+	content: '';
+	position: absolute;
+	top: 10%;
+	left: 3%;
+	width: 12px;
+	height: 16px;
+	background: rgba(234, 89, 50, 0.3);
+	border-radius: 50% 60% 40% 50%;
+	transform: rotate(25deg);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.container-component.instance-1::after {
+	content: '';
+	position: absolute;
+	bottom: 15%;
+	right: 4%;
+	width: 8px;
+	height: 10px;
+	background: rgba(234, 89, 50, 0.25);
+	border-radius: 60% 40% 50% 50%;
+	transform: rotate(-15deg);
+	z-index: 1;
+	pointer-events: none;
+}
+
+/* Hand-drawn arrows for navigation */
+.icons-component svg {
+	filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Make the yellow accent text more hand-lettered looking */
+.text-component strong[style*="color: #DACC3E"] {
+	font-family: 'Special Elite', cursive !important;
+	transform: rotate(-0.3deg);
+	display: inline-block;
 }
