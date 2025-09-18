@@ -26,20 +26,20 @@ SPDX-FileCopyrightText: 2025 Knitli Inc.
 }
 
 .formkit-form[data-uid="e3cbada22f"] .formkit-header h2 {
-	font-family: 'Geist Mono', monospace !important;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace !important;
 	color: var(--ivory) !important;
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .formkit-form[data-uid="e3cbada22f"] .formkit-subheader p {
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif !important;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif !important;
 	color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .formkit-form[data-uid="e3cbada22f"] .formkit-input {
 	background: rgba(255, 255, 255, 0.1) !important;
 	border: 1px solid rgba(255, 255, 255, 0.2) !important;
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif !important;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif !important;
 	color: var(--ivory) !important;
 	backdrop-filter: blur(10px);
 }
@@ -81,7 +81,7 @@ SPDX-FileCopyrightText: 2025 Knitli Inc.
 }
 
 .formkit-form[data-uid="e3cbada22f"] .formkit-guarantee p {
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif !important;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif !important;
 	color: rgba(255, 255, 255, 0.7) !important;
 	font-size: 12px !important;
 }
@@ -458,7 +458,7 @@ body.is-instant::after {
 	text-align: right;
 	text-transform: uppercase;
 	color: var(--section-yellow);
-	font-family: 'Geist Mono', monospace;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
 	font-size: 1.5em;
@@ -496,7 +496,7 @@ body.is-instant::after {
 	text-align: left;
 	text-transform: uppercase;
 	color: var(--ivory);
-	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	padding-left: 3.375rem;
 	padding-right: 0;
 	letter-spacing: 0.175rem;
@@ -540,7 +540,7 @@ body.is-instant::after {
 .text-component.style-7 {
 	text-align: left;
 	color: var(--ivory);
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.075rem;
 	width: calc(100% + 0.075rem);
 	font-size: 1.125em;
@@ -570,7 +570,7 @@ body.is-instant::after {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--isabelline);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: -0.025rem;
 	width: 100%;
 	font-size: 3em;
@@ -640,7 +640,7 @@ body.is-instant::after {
 .text-component.style-11 {
 	text-transform: uppercase;
 	color: var(--purple-blue);
-	font-family: 'Geist Mono', monospace;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
 	font-size: 1.175em;
@@ -683,7 +683,7 @@ body.is-instant::after {
 	text-align: left;
 	text-transform: uppercase;
 	color: var(--dark-purple);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Special Elite', 'EB Garamond', Garamond, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 1.875em;
@@ -729,7 +729,7 @@ body.is-instant::after {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--darkest-purple);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	padding-left: 2.625rem;
 	padding-right: 2.625rem;
 	text-indent: 3rem;
@@ -790,7 +790,7 @@ body.is-instant::after {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--dark-purple);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 1.875em;
@@ -825,7 +825,7 @@ body.is-instant::after {
 }
 
 #text43 {
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif !important;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif !important;
 }
 
 .text-component.style-5:not(:first-child) {
@@ -839,7 +839,7 @@ body.is-instant::after {
 .text-component.style-5 {
 	text-align: left;
 	color: var(--aubergine);
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 1em;
@@ -880,7 +880,7 @@ body.is-instant::after {
 .text-component.style-20 {
 	text-align: left;
 	color: var(--aubergine);
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 0.85em;
@@ -922,7 +922,7 @@ body.is-instant::after {
 	text-align: justify;
 	text-transform: uppercase;
 	color: var(--section-yellow);
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	letter-spacing: 0.15rem;
 	width: calc(100% + 0.15rem);
 	font-size: 1em;
@@ -1074,7 +1074,7 @@ p.text-component.style-19 {
 		2px 4px 12px rgba(0, 0, 0, 0.15),
 		inset 0 1px 0 rgba(255, 255, 255, 0.3);
 	margin: 1rem;
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	padding: 1.5rem;
 	transform: rotate(-1.2deg);
 	border-left: 3px solid var(--slate);
@@ -1122,13 +1122,13 @@ p.text-component.style-19 {
 
 /* Add subtle paper texture and handwritten feel */
 #container03 .inner > div h2 {
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	transform: rotate(-0.5deg);
 	margin-bottom: 1rem;
 }
 
 #container03 .inner > div p.text-component.style-6 {
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	transform: rotate(0.3deg);
 	font-size: 0.9em !important;
 	color: var(--rust);
@@ -1168,7 +1168,7 @@ p.text-component.style-19 {
 }
 
 #text23 {
-	font-size: 0.7em;;
+	font-size: 0.7em;
 }
 
 .text-component.style-19 u {
@@ -1197,7 +1197,7 @@ p.text-component.style-19 {
 .text-component.style-6 {
 	text-transform: uppercase;
 	color: var(--section-yellow);
-	font-family: 'Geist Mono', monospace;
+	font-family: 'Geist Mono', 'Lucida Typewriter', 'Lucida Sans Unicode', 'Lucida Console', monospace;
 	letter-spacing: 0.35rem;
 	width: calc(100% + 0.35rem);
 	font-size: 1.175em;
@@ -1240,7 +1240,7 @@ p.text-component.style-19 {
 	text-align: left;
 	text-transform: uppercase;
 	color: var(--isabelline);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 3.125em;
@@ -1250,7 +1250,7 @@ p.text-component.style-19 {
 
 #text30.marker, #text09.marker {
 	color: var(--darkest-purple);
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	text-decoration: underline var(--purple-blue) .5em;
 	font-size: 1.5em;
 	letter-spacing: 0.05rem;
@@ -1259,7 +1259,7 @@ p.text-component.style-19 {
 }
 
 #text10, #text31 {
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	color: var(--dark-purple);
 	font-size: 1em;
 	padding: 0.1rem 0.25rem;
@@ -1302,7 +1302,7 @@ p.text-component.style-19 {
 .text-component.style-21 {
 	text-align: left;
 	color: var(--aubergine);
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 1em;
@@ -1311,7 +1311,7 @@ p.text-component.style-19 {
 }
 
 .text-component.style-21 {
-	font-family: 'Pangolin', serif;
+	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 }
 .text-component.style-21 strong {
 	color: var(--cyan);
@@ -1346,7 +1346,7 @@ p.text-component.style-19 {
 
 .text-component.style-15 {
 	color: var(--isabelline);
-	font-family: 'IBM Plex Sans', Inter, system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 1.175em;
@@ -1379,7 +1379,7 @@ p.text-component.style-19 {
 .text-component.style-8 {
 	text-transform: uppercase;
 	color: var(--isabelline);
-	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: -0.025rem;
 	width: 100%;
 	font-size: 2.75em;
@@ -1416,7 +1416,7 @@ p.text-component.style-19 {
 .text-component.style-17 {
 	text-transform: uppercase;
 	color: var(--isabelline);
-	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 2.375em;
@@ -1461,7 +1461,7 @@ p.text-component.style-19 {
 .text-component.style-18 {
 	text-transform: uppercase;
 	color: var(--isabelline);
-	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
 	font-size: 2.375em;
@@ -1749,7 +1749,7 @@ p.text-component.style-19 {
 	text-transform: uppercase;
 	font-size: 1em;
 	line-height: 1.5;
-	font-family: 'Special Elite', 'EB Garamond', 'Garamond', gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	font-weight: 400;
 	color: var(--darkest-purple);
 }
@@ -1770,7 +1770,7 @@ p.text-component.style-19 {
 
 .form-component.style-2 input[type="text"], .form-component.style-2 input[type="email"], .form-component.style-2 input[type="tel"], .form-component.style-2 input[type="number"], .form-component.style-2 textarea, .form-component.style-2 select, .form-component.style-2 .file, .form-component.style-2 .date {
 	font-size: 1em;
-	font-family: 'IBM Plex Sans', system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.025rem;
 	padding-left: calc(0.025rem + 1.53125rem);
 	font-weight: 400;
@@ -1860,7 +1860,7 @@ p.text-component.style-19 {
 .form-component.style-2 input[type="checkbox"] + label, .form-component.style-2 p {
 	font-size: 1em;
 	line-height: 1.875;
-	font-family: 'IBM Plex Sans', system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.025rem;
 	padding-left: 0.025rem;
 	font-weight: 400;
@@ -1875,7 +1875,7 @@ p.text-component.style-19 {
 	padding: 0 2.1875rem;
 	vertical-align: middle;
 	text-transform: uppercase;
-	font-family: 'IBM Plex Sans', system-ui, sans-serif;
+	font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 	letter-spacing: 0.35rem;
 	padding-left: calc(0.35rem + 2.1875rem);
 	font-size: 0.875em;
@@ -2182,7 +2182,7 @@ p.text-component.style-19 {
 	padding: 0 2.1875rem;
 	vertical-align: middle;
 	text-transform: uppercase;
-	font-family: 'Geist Mono', monospace;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	letter-spacing: 0.35rem;
 	padding-left: calc(0.35rem + 2.1875rem);
 	font-size: 0.9em;
@@ -4183,7 +4183,7 @@ strong {
 	left: -1.5em;
 	top: 0;
 	color: var(--rust);
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	transform: rotate(5deg);
 }
 
@@ -4327,7 +4327,7 @@ strong {
 
 /* Make the yellow accent text more hand-lettered looking */
 .text-component strong[style*="color: var(--section-yellow)"] {
-	font-family: 'Special Elite', 'EB Garamond', Garamond, gothic, serif !important;
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace !important;
 	transform: rotate(-0.3deg);
 	display: inline-block;
 }
