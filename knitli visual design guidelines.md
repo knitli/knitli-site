@@ -45,7 +45,9 @@ Our color palette wasn't chosen from a color wheel but from emotion: "warm and w
 
 - **Warm serif** for body text (e.g. Source Serif) 
 - **Distinctive monospace** for accents and CTAs (not sure, maybe Google Sans Code or Syne Mono??) - **Hand-lettered style** for headers and emphasis
-- Mix technical precision with human warmth ## Color Philosophy
+- Mix technical precision with human warmth
+
+## Color Philosophy
 - **Rust warmth** as primary emotional anchor
 - **Aubergine depth** for sophistication and coziness
 - **Cream/off-white** paper backgrounds
