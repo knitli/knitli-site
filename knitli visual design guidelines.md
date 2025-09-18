@@ -73,7 +73,7 @@ Our color palette wasn't chosen from a color wheel but from emotion: "warm and w
 - Generic SaaS flat design
 - Perfect grids and sterile layouts
 - Cold, intimidating tech aesthetics
-- Blue-and-orange "safe" color schemes
+- "safe" color schemes
 
 ## Accessibility Through Craft
 
@@ -83,9 +83,19 @@ This approach enhances accessibility by providing:
 - More distinctive interactive elements
 - Reduced cognitive load through familiar, human patterns
 
-## Implementation Notes
+## Implementation Goals (Not totally attainable right now, but let's get close)
 
 - Embrace asymmetry and organic layouts 
 - Use generous white space that feels intentional
 - Design like we're building for a design studio, not a tech company
 - Every element should feel like it has a story behind it
+
+## Overall Goal
+
+- Communicate:
+  - Knitli solves real, human problems, and we do it because we want to help people create.
+  - It's not about the technology or "because AI"
+  - We understand people and all their flaws (and ours)
+  - We understand AI and all its flaws
+  - We fill those gaps.
+- Set us apart from *every other SaaS or would-be SaaS company* -- we have an actual personality and are comfortable with image risk
