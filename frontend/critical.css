@@ -1,0 +1,198 @@
+/* Critical CSS for hero section - inline for fastest LCP */
+:root {
+  --rust: #EA5932;
+  --darkest-purple: #0D030B;
+  --aubergine: #1E061B;
+  --section-yellow: #FFE500;
+  --dark-purple: #352134;
+  --cyan: #15a6cd;
+  --purple-blue: #3d15cb;
+  --yellow-green: #A4CB15;
+  --violet: #6939FF;
+  --isabelline: #F2ECE7;
+  --ivory: #FCF9F5;
+  --slate: #7B8D9C;
+  --background-height: 100vh;
+  --viewport-height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  font-size: 17pt;
+}
+
+body {
+  line-height: 1.0;
+  min-height: var(--viewport-height);
+  min-width: 320px;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  background-color: var(--darkest-purple);
+  font-family: 'IBM Plex Sans', Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+}
+
+/* Hero background - only on first section */
+#home-section {
+  position: relative;
+}
+
+#home-section::before {
+  background-attachment: scroll;
+  content: '';
+  display: block;
+  height: var(--background-height);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: scale(1);
+  width: 100vw;
+  z-index: 0;
+  background-image: url('assets/images/typewriter-hero-wide.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Loading state */
+body::after {
+  background-color: var(--darkest-purple);
+  content: '';
+  display: block;
+  pointer-events: none;
+  position: fixed;
+  transform: scale(1);
+  z-index: 1;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  transition: opacity 0s ease-in-out 0s, visibility 0s 0s;
+  visibility: hidden;
+  width: 100%;
+}
+
+body.is-loading::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-wrapper {
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--viewport-height);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.site-main {
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  transition: opacity 0.125s ease-in-out 0s;
+}
+
+.site-main > .inner {
+  --padding-horizontal: 6rem;
+  --padding-vertical: 6rem;
+  --spacing: 2.75rem;
+  --width: 60rem;
+  max-width: 100%;
+  position: relative;
+  width: var(--width);
+  z-index: 1;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+}
+
+/* Hero section critical styles */
+#container12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+#container12 .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  z-index: 2;
+}
+
+#container12 .wrapper .inner {
+  position: absolute;
+  bottom: 25vh; /* Position button 25% from bottom */
+  left: 60%;
+  transform: translateX(-60%); /* Center horizontally */
+  width: auto;
+}
+
+#buttons08 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#buttons08 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ivory);
+  text-decoration: none;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+#buttons08 a:hover {
+  background-color: var(--cyan);
+  color: var(--darkest-purple);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  #home-section::before {
+    background-image: url('assets/images/typewriter-hero-narrow.webp');
+  }
+  
+  .site-main > .inner {
+    --padding-horizontal: 2rem;
+    --padding-vertical: 3rem;
+  }
+  
+  #text-coming-soon {
+    font-size: 2.5rem;
+  }
+  
+  html {
+    font-size: 14pt;
+  }
+}

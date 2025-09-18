@@ -12,15 +12,29 @@
   },
   "license": "MIT OR Apache-2.0",
   "author": "Knitli Inc.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "npx serve frontend --single --listen 3000",
+    "dev": "vite",
+    "dev:legacy": "npx serve frontend --single --listen 3000",
     "dev:python": "cd frontend && python3 -m http.server 3000",
+    "build": "node scripts/build-optimized.js",
+    "build:vite": "vite build",
+    "build:analyze": "vite build --mode analyze && npx vite-bundle-analyzer dist",
+    "preview": "vite preview",
+    "preview:dist": "npx serve dist --single --listen 3000",
     "start": "npm run dev",
+    "deploy": "npm run build && wrangler pages deploy dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "posthog-js": "^1.266.0",
+    "posthog-js": "^1.266.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "terser": "^5.24.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "vite-bundle-analyzer": "^0.7.0",
     "wrangler": "^4.37.1"
   },
   "trustedDependencies": [
