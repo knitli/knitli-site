@@ -13,10 +13,13 @@ export default defineConfig({
     },
     cssMinify: true,
     minify: 'terser',
+    keepClassnames: false,
     terserOptions: {
+      toplevel: true,
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
+        ecma: 2020
       }
     },
     sourcemap: false,
