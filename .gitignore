@@ -37,3 +37,4 @@ temp/
 # Asset production files (GIMP, source files)
 frontend/asset_production/
 asset_production/
+.wrangler/
