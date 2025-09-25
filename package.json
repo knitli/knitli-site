@@ -16,7 +16,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "dev:legacy": "npx serve frontend --single --listen 3000",
     "dev:python": "cd frontend && python3 -m http.server 3000",
     "build": "node scripts/build-optimized.js",
     "build:vite": "vite build",

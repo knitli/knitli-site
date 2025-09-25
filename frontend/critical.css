@@ -158,15 +158,32 @@ body.is-loading::after {
   padding: 0;
 }
 
+#text-coming-soon {
+	text-align: right;
+	text-transform: uppercase;
+	color: var(--yellow-green);
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
+	letter-spacing: clamp(0.175rem, 0.5vw, 0.35rem);
+	width: calc(100% + 0.35rem);
+	font-size: clamp(1.2rem, 2vw, 2em);
+	line-height: 1.3;
+	font-weight: 600;
+	text-align: right;
+	position: absolute;
+	bottom: 2rem;
+	right: 0.5rem;
+}
+
 #buttons08 a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--ivory);
   text-decoration: none;
-  font-family: 'Geist Mono', monospace;
+  font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  letter-spacing: clamp(0.1rem, 0.5vw, 0.2rem);
   transition: all 0.2s ease;
 }
 
@@ -176,6 +193,17 @@ body.is-loading::after {
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+#buttons08 .n02 {
+  background-color: rgba(21, 166, 205, 0.60); /* cyan tint */
+}
+
+#buttons08 .n02:hover {
+  color: var(--ivory);
+  box-shadow: 0 0 0 0.2rem var(--cyan);
+  background-color: rgba(53, 33, 52, 0.8); /* dark purple tint */
+}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
@@ -187,11 +215,8 @@ body.is-loading::after {
     --padding-horizontal: 2rem;
     --padding-vertical: 3rem;
   }
-  
-  #text-coming-soon {
-    font-size: 2.5rem;
-  }
-  
+
+
   html {
     font-size: 14pt;
   }

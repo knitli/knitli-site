@@ -72,6 +72,11 @@ npm run build:vite
 npm run preview:dist
 ```
 
+### Which HTML file is used?
+- Development server (Vite): serves `frontend/index.html`.
+- Optimized production build: reads `frontend/index.html`, inlines `critical.css` (via the literal `@import "critical.css";` token) and writes `dist/index.html`. It also copies `frontend/assets/lazy-load.js` to `dist/assets/lazy-load.js`, minifies `frontend/assets/main.css` to `dist/assets/main.css`, and copies other assets.
+- Single-source flow: `index.html` now contains the performance tweaks (preloads, deferred fonts/scripts, critical CSS token) so dev and prod stay in sync.
+
 ### Deployment
 ```bash
 # Build and deploy to Cloudflare Pages
@@ -82,8 +87,7 @@ npm run deploy
 
 ```
 ├── frontend/                    # Source files
-│   ├── index.html              # Original HTML
-│   ├── index-optimized.html    # Performance-optimized template
+│   ├── index.html              # Single source HTML (dev + prod)
 │   ├── critical.css            # Critical CSS for hero section
 │   └── assets/                 # Original assets
 ├── dist/                       # Optimized build output

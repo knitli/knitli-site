@@ -408,6 +408,11 @@ unloaded-script {
 	margin-bottom: -6rem !important;
 }
 
+#text42,
+#text48 {
+	font-size: clamp(0.8rem, 2vw, 1.125rem);
+}
+
 body.is-loading .site-main {
 	opacity: 0;
 }
@@ -452,18 +457,6 @@ body.is-instant::after {
 
 .text-component span[style], .text-component strong, .text-component a, .text-component code, .text-component mark, .text-component spoiler-text {
 	-webkit-text-fill-color: currentcolor;
-}
-
-.text-component.style-3 {
-	text-align: right;
-	text-transform: uppercase;
-	color: var(--section-yellow);
-	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
-	letter-spacing: 0.35rem;
-	width: calc(100% + 0.35rem);
-	font-size: 1.5em;
-	line-height: 2;
-	font-weight: 600;
 }
 
 .text-component.style-3 mark {
@@ -947,39 +940,54 @@ p.text-component.style-19 {
 }
 /* Custom styling for the "Open Source First" index card */
 #text47.text-component.style-19 {
-
 	position: static;
 	top: 0;
 	left: 0;
 	right: 0;
 	margin: 0 auto 1rem;
 	width: var(--width-measure);
-	height: calc(var(--width-measure) * 0.6); /* 3x5 card aspect ratio */
-	max-height: 300px;
-	max-width: 500px;
+	/* Enforce 3x5 (landscape) index card using intrinsic aspect ratio */
+	aspect-ratio: 5 / 3; /* width / height */
+	max-width: 500px; /* -> max height becomes 300px via aspect-ratio */
 	z-index: 10;
-	
-	/* Index card styling */
+
+	/* Card visuals */
 	background-color: var(--ivory);
 	color: var(--dark-purple);
-	padding: 1.25rem 2rem;
 	border-radius: 2px;
 	box-shadow: 
 		0 2px 8px rgba(0, 0, 0, 0.1),
 		0 1px 3px rgba(0, 0, 0, 0.15);
 	border: 1px solid rgba(30, 6, 27, 0.1);
-	
-	/* Text styling */
-	text-align: center;
-	font-size: 0.9em;
-	line-height: 1.7;
-	letter-spacing: 0.1rem;
-	font-weight: 700;
+	box-sizing: border-box;
+	/* Enable container queries for fine-grained sizing */
+	container-type: inline-size;
 
-	strong {
-		color: var(--rust);
-		font-weight: 900;
-	}
+	/* Layout/containment: keep content inside even with fallback fonts */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: min(1.25rem, 3cqi) min(2rem, 4cqi);
+	overflow: auto; /* if content still exceeds, scroll within card */
+	overscroll-behavior: contain;
+
+	/* Typographic tuning: scale with card size and wrap gracefully */
+	text-align: center;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: clamp(0.05rem, 0.25cqw, 0.1rem);
+	font-size: clamp(0.8rem, 1.4cqw, 1rem);
+	word-break: normal;
+	overflow-wrap: anywhere;
+	hyphens: auto;
+	text-wrap: pretty;
+
+}
+
+/* Emphasized text inside the index card */
+#text47.text-component.style-19 strong {
+	color: var(--rust);
+	font-weight: 900;
 }
 
 .image-component.instance-1.style-1 {
@@ -1055,12 +1063,11 @@ p.text-component.style-19 {
 
 /* Reduce spacing between headings and supporting text */
 #container03 .text-component.style-1:not(:last-child) {
-	margin-bottom: 0.5rem !important;
+	margin-bottom: 0.3rem !important;
 }
 
 /* Transform CodeWeaver and Thread columns into notepad-style elements */
 #container03 .inner > div {
-
 	vertical-align: top;
 	position: relative;
 	background: var(--isabelline);
@@ -1073,9 +1080,9 @@ p.text-component.style-19 {
 	box-shadow: 
 		2px 4px 12px rgba(0, 0, 0, 0.15),
 		inset 0 1px 0 rgba(255, 255, 255, 0.3);
-	margin: 1rem;
+	margin: 0.5rem;
 	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
-	padding: 1.5rem;
+	padding: 1rem;
 	transform: rotate(-1.2deg);
 	border-left: 3px solid var(--slate);
 	background-image: 
@@ -1122,17 +1129,18 @@ p.text-component.style-19 {
 
 /* Add subtle paper texture and handwritten feel */
 #container03 .inner > div h2 {
-	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
+	font-family: 'Special Elite', 'EB Garamond', Garamond, 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+	font-size: clamp(1.2rem, 2.9vw, 2rem);
 	transform: rotate(-0.5deg);
-	margin-bottom: 1rem;
+	margin-bottom: 0.4rem;
 }
 
 #container03 .inner > div p.text-component.style-6 {
 	font-family: Pangolin, 'Apple Casual', 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, sans-serif;
 	transform: rotate(0.3deg);
-	font-size: 0.9em !important;
+	font-size: clamp(0.65rem, 3vw, 0.9rem) !important;
 	color: var(--rust);
-	margin-top: 0.5rem !important;
+	margin-top: 0.3rem !important;
 	margin-bottom: 0.2rem !important;
 	padding: 0;
 }
@@ -1747,8 +1755,8 @@ p.text-component.style-19 {
 .form-component.style-2 label:first-child {
 	margin: 0.25rem 0 1.25rem 0;
 	text-transform: uppercase;
-	font-size: 1em;
-	line-height: 1.5;
+	font-size: clamp(0.9rem, 2vw, 1.125rem);
+	line-height: 1.4;
 	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
 	font-weight: 400;
 	color: var(--darkest-purple);
@@ -2224,12 +2232,48 @@ p.text-component.style-19 {
 }
 
 .buttons-component.instance-8 > li > a.n01 {
-	background-color: var(--rust);
+	background-color: var(--rust); /* primary filled */
 	color: var(--aubergine);
 }
 
 .buttons-component.instance-8 > li > a.n01:hover {
 	background-color: var(--cyan) !important;
+}
+
+/* Size and spacing tweaks only for the hero buttons (instance-8) */
+.buttons-component.instance-8 > li > a {
+	height: 3.5rem;
+	line-height: 3.5rem;
+	padding: 0 1.5rem;
+	letter-spacing: 0.3rem;
+	padding-left: calc(0.3rem + 1.5rem);
+	font-size: 0.85em;
+	border-radius: 1.25rem;
+	box-shadow: 0 0 0 0.3rem var(--dark-purple);
+}
+
+.buttons-component.instance-8 > li > a > svg {
+	height: 90%;
+	width: 1.25em;
+	margin-right: calc(-0.125em + 0.3rem);
+}
+
+/* Secondary variant: outlined button for the second hero action */
+.buttons-component.instance-8 > li > a.n02 {
+	background-color: transparent;
+	color: var(--rust);
+	border: 1rem solid var(--rust);
+	box-shadow: 0 0 0 0.2rem var(--rust); /* outline */
+}
+
+.buttons-component.instance-8 > li > a.n02 > svg {
+	fill: var(--rust);
+}
+
+.buttons-component.instance-8 > li > a.n02:hover {
+	background-color: rgba(218, 109, 87, 0.50); /* rust tint */
+	color: var(--aubergine);
+	box-shadow: 0 0 0 0.2rem var(--aubergine);
 }
 
 .container-component {
@@ -3195,8 +3239,8 @@ p.text-component.style-19 {
 	.text-component.style-5 {
 		letter-spacing: 0.021875rem;
 		width: calc(100% + 0.021875rem);
-		font-size: 1em;
-		line-height: 1.875;
+		font-size: clamp(1rem, 2.5vw, 1em);
+		line-height: 1.3;
 	}
 	
 	.text-component.style-20:not(:first-child) {
@@ -4342,10 +4386,23 @@ strong {
 
 #text-coming-soon {
 	text-align: right;
+	text-transform: uppercase;
+	color: var(--section-yellow);
+	font-family: 'Geist Mono', 'Nimbus Mono PS', 'Courier New', monospace;
+	letter-spacing: clamp(0.175rem, 0.5vw, 0.35rem);
+	width: calc(100% + 0.35rem);
+	font-size: clamp(1.2rem, 2vw, 2em);
+	line-height: 1.3;
+	font-weight: 600;
+	text-align: right;
 	position: absolute;
 	bottom: 0.25rem;
 	right: 0.5rem;
 }
+#container03 .inner {
+		gap: clamp(2rem, 2vw, 2.5em) !important;
+        flex-wrap: wrap;
+	}
 
 /* Mobile responsive fixes for notepad elements and index card */
 @media (max-width: 768px) {
@@ -4353,17 +4410,17 @@ strong {
 	#container03 .inner {
 		display: flex !important;
 		flex-direction: column !important;
-		gap: 2rem !important;
 	}
 	
 	/* Fix notepad sizing and positioning on mobile */
 	#container03 .inner > div {
-		width: calc(100% - 2rem) !important;
-		margin: 0 1rem !important;
-		padding: 1.5rem 1.25rem 2rem 1.25rem !important;
+		width: calc(100vw - 1.5rem) !important;
+		margin: 0 0.8rem !important;
+		padding: 1rem 1rem 1rem 1rem !important;
 		transform: rotate(0deg) !important; /* Remove rotation on mobile */
 		box-sizing: border-box !important;
 		min-height: auto !important;
+		max-height: calc((calc(100vw - 1.5rem) / 3) * 5) !important; /* Maintain aspect ratio */
 		overflow: hidden !important;
 	}
 	
@@ -4404,24 +4461,25 @@ strong {
 	
 	/* Reduce font size for handwritten elements on mobile */
 	#container03 .inner > div p.text-component.style-6 {
-		font-size: 0.7em !important;
-		margin-bottom: 0.5rem !important;
+		font-size: clamp(0.6rem, 2.5vw, 0.85rem) !important;
+		margin-bottom: 0.3rem !important;
 	}
 	
 	#container03 .inner > div h2 {
-		font-size: 1.4em !important;
+		font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
 		transform: rotate(0deg) !important;
-		margin-bottom: 0.8rem !important;
+		margin-bottom: 0.3rem !important;
 		margin-top: 0 !important;
 	}
 	
 	/* Fix index card responsive sizing */
 	#text47.text-component.instance-47.style-19 {
-		padding: 1rem 0.75rem !important;
-		margin: 1rem 0.5rem 2rem 0.5rem !important;
-		font-size: 0.9em !important;
-		line-height: 1.4 !important;
+		padding: 0.5rem 0.4rem !important;
+		margin: 1rem 0.5rem 1rem 0.5rem !important;
+		font-size: clamp(0.6rem, 2.7vw, 0.95rem) !important;
+		line-height: 1.3 !important;
 		max-width: calc(100% - 1rem) !important;
+		max-height: unset !important; /* governed by aspect-ratio */
 		box-sizing: border-box !important;
 	}
 }
@@ -4434,8 +4492,7 @@ strong {
 	
 	#container03 .inner > div {
 		width: calc(100% - 1rem) !important;
-		margin: 0 0.5rem !important;
-		padding: 1rem 1rem 1.5rem 1rem !important;
+		margin: 0 0.4rem !important;
 	}
 	
 	#container03 .text-component.style-21 li {
@@ -4449,18 +4506,28 @@ strong {
 	}
 	
 	#container03 .inner > div h2 {
-		font-size: 1.2em !important;
+		font-size: clamp(1.1em, 3vw, 1.5rem) !important;
 	}
 	
 	#container03 .inner > div p.text-component.style-6 {
-		font-size: 0.65em !important;
+		font-size: clamp(0.65em, 3vw, 0.8rem) !important;
 	}
 	
 	/* Make index card even more compact on very small screens */
 	#text47.text-component.instance-47.style-19 {
-		padding: 0.75rem 0.5rem !important;
-		margin: 0.5rem 0.25rem 1.5rem 0.25rem !important;
-		font-size: 0.85em !important;
+		padding: 0.3rem 0.3rem !important;
+		margin: 0.25rem 0.25rem 0.5rem 0.25rem !important;
+		font-size: clamp(0.6rem, 2.7vw, 0.9rem) !important;
 		max-width: calc(100% - 0.5rem) !important;
+		line-height: 1.3 !important;
+	}
+}
+
+/* If container queries are supported, fine-tune based on the card box size */
+@container (min-width: 360px) {
+	#text47.text-component.style-19 {
+		font-size: clamp(0.9rem, 1.2cqw, 1rem);
+		letter-spacing: clamp(0.06rem, 0.2cqw, 0.1rem);
+		padding: min(1.25rem, 2.5cqi) min(1.5rem, 3.5cqi);
 	}
 }
