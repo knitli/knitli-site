@@ -10,11 +10,7 @@ tags: ai, beginners, tokenomics, 101
 
 ---
 
-Part 1 of [Knitli’s](https://knitli.com) 101 introductions to AI and the economics of AI
-
-> This article explores the concept of tokens in AI, highlighting how they differ from words and are the fundamental units processed by AI models like ChatGPT. It explains the cost implications of processing tokens due to the intensive computations required on GPUs, making them a significant cost driver in AI operations. Understanding tokens is crucial for grasping AI mechanics, pricing, and efficiency.
-
----
+<details data-node-type="hn-details-summary"><summary>Part 1 of Knitli’s 101 introductions to AI and the economics of AI</summary><div data-type="detailsContent">This article explores the concept of tokens in AI, highlighting how they differ from words and are the fundamental units processed by AI models like ChatGPT. It explains the cost implications of processing tokens due to the intensive computations required on GPUs, making them a significant cost driver in AI operations. Understanding tokens is crucial for grasping AI mechanics, pricing, and efficiency.</div></details>
 
 ## Tokens are *Parts* of Words
 
