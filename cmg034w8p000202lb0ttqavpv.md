@@ -6,11 +6,13 @@ datePublished: Thu Sep 18 2025 04:00:00 GMT+0000 (Coordinated Universal Time)
 cuid: cmg034w8p000202lb0ttqavpv
 slug: understanding-tokens-what-they-are-and-why-theyre-important
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1758843572538/d521021c-9442-424d-b1e2-3e30e2aa4d96.png
-tags: tokenomics, 101
+tags: ai, beginners, tokenomics, 101
 
 ---
 
 Part 1 of [Knitli’s](https://knitli.com) 101 introductions to AI and the economics of AI
+
+> This article explores the concept of tokens in AI, highlighting how they differ from words and are the fundamental units processed by AI models like ChatGPT. It explains the cost implications of processing tokens due to the intensive computations required on GPUs, making them a significant cost driver in AI operations. Understanding tokens is crucial for grasping AI mechanics, pricing, and efficiency.
 
 ---
 
@@ -41,15 +43,15 @@ That simple greeting is **4 tokens**, not **2 words**. Code fragments break into
 
 ## Tokens Aren’t Expensive. Processing them is.
 
-When you send your tokens to get processed, *each one* must be run through **billions of math operations on very expensive GPUs** every single time. That’s where the cost comes from:
+When you send your tokens to get processed, *each one* must be run through **billions of math operations on very expensive GPUs** every single time. That’s where the cost comes from — **the hardware needs**:
 
-* Power-hungry hardware
+* *A lot* of power to run
     
-* Data center space
+* Datacenter space to store and run them, and datacenters are expensive
     
-* Cooling
+* Constant, special cooling, because it generates huge amounts of heat
     
-* Staff to maintain and secure it
+* Staff to maintain it and keep it secure and to keep it running optimally
     
 
 More tokens → more GPU time → higher costs.
@@ -69,7 +71,7 @@ Under the hood, **tokens are the biggest driver of compute costs at every AI com
 * **Memory**, efficiency, and much of prompt engineering are all about how tokens are used.
     
 
-**If you want to understand AI, and how it really works, or why it sometimes *costs so much*. You have to start with tokens.**
+**If you want to get the basics of how AI works, you have to start with tokens. Tokens are the building blocks for AI, and a big part of why it sometimes *costs so much*.**
 
 ---
 
