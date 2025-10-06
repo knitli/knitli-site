@@ -11,7 +11,7 @@ tags: graph, ast, parsing, tree-sitter, context-engineering, clarity-engineering
 ---
 
 ---
-#### Engineering Clarity
+#### Clarity Engineering
 ---
 ## TL;DR: If You're Here Because Tree-sitter's `node-types.json` Makes No Sense
 
@@ -452,7 +452,7 @@ So our initial results from 25 languages gave us ~110 abstract types, but a litt
 You're likely to see similar patterns across all nodes and edges based on my observations working with the data, but I haven't done the analysis yet. If you look at Categories that are unique to a language, you see that many are slight variations from these, like `type_declaration`, `pattern_expr`, and `expression_statement`.
 ---
 
-*This post is part of our technical 'Engineering Clarity' series on making developer tools more intuitive.*
+*This post is part of our technical *Clarity Engineering* series on making developer tools more intuitive.*
 
 [^1]: "Semantic" is one of those heady academic words I try to avoid, but in this context it's hard to do that. In terms of [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree)-parsing like with tree-sitter, you can think of `semantic` as meaning "has structural meaning". Tools like tree-sitter parse text, usually code, based on *defined relationships and rules* called *grammars*, and not based on their physical syntax (like a regular expression (regex) does where it looks for specific characters in specific patterns). This difference is powerful - the resulting 'syntax tree' provides rich information about *code relationships*. Tree-sitter, despite its flaws in terminology and documentation, is a powerful tool for generating a syntax tree for almost any programming language and doing it *very* quickly (real time even on large codebases).
 [^2]: Not my first in full disclosure, but the first time I'd really *inspected* one.
