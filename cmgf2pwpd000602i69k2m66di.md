@@ -31,7 +31,7 @@ tags: graph, ast, parsing, tree-sitter, context-engineering, clarity-engineering
 | Field | **Direct Connection** | Semantic relationship with a role ("condition", "body") |
 | Field name | **Role** | The semantic purpose ("what is this child for?") |
 | Child | **Positional Connection** | Ordered relationship without semantic meaning |
-| Extra | *Loose* Connection | describes *permission* to be anywhere |
+| `extra` flag | **can_be_anywhere** | What it is; a thing that can be anywhere
 | `named` flag | **is_explicit_rule** | Says what it actually means |
 
 ### The Results
@@ -167,7 +167,7 @@ if_statement.condition → expression (Category)
 binary_expression.operator → ["+", "-", "*", "/"] (Concrete)
 ```
 
-Tree-sitter's flattened structure obscures this. Our design makes it explicit.
+Tree-sitter's flattened structure obscures this. My design makes it explicit.
 
 ### Finding #2: Multi-Category Membership Happens (But Is Uncommon)
 
@@ -226,7 +226,7 @@ Tree-sitter has `required` and `multiple` as separate booleans. What do they mea
 | True              | False           | exactly 1 (required)       | function name |
 | True              | True            | 1 or more (required list)  | case statements |
 
-This table should be in the tree-sitter docs. It's not.[^3] We figured it out empirically and built it into our design.
+This table should be in the tree-sitter docs. It's not.[^3] I figured it out empirically and built it into the design.
 
 ## Translation Guide for Tree-sitter Veterans
 
@@ -240,8 +240,8 @@ I'm not trying to be difficult. Here's the mapping:
 | Field | **Direct Connection** | Edges aren't nodes; connections are relationships |
 | Field name | **Role** | Describes semantic purpose, not just presence |
 | Child | **Positional Connection** | Ordered relationship without semantic role |
-| Extra | **Loose Connection** | Permission to appear anywhere |
 | `named` attribute | **is_explicit_rule** | Says what it actually means |
+| `extra` | **can_be_anywhere** | again, just say what it is
 | `multiple` | **allows_multiple** | Upper bound (can have multiple) |
 | `required` | **requires_presence** | Lower bound (must have ≥1) |
 | `root`     | **is_start**          | The starting or first node (just tells tree-sitter where to start)
@@ -255,7 +255,6 @@ class ConnectionClass(BaseEnum): # BaseEnum is a utility enum with convenience m
     """Classification for a Connection."""
     DIRECT = "direct"        # Named semantic relationship (has a Role)
     POSITIONAL = "positional"  # Ordered but no semantic meaning
-    LOOSE = "loose"          # Can appear anywhere
 
 class ThingKind(BaseEnum):
     """Kind of thing based on its structural use."""
@@ -266,30 +265,30 @@ class ThingKind(BaseEnum):
 if_statement = CompositeNode(
     name="if_statement",
     kind=ThingKind.COMPOSITE,
-    categories=frozenset(["statement"]),
-    direct_connections=frozenset([
+    categories=frozenset({"statement"}),
+    direct_connections=frozenset({
         DirectConnection(
             role="condition",
             source="if_statement",
-            target_things=frozenset(["expression"]),  # Polymorphic!
+            target_things=frozenset({"expression"}),  # Polymorphic!
             requires_presence=True,
             allows_multiple=False
-        ),
+        }),
         DirectConnection(
             role="consequence",
             source="if_statement",
-            target_things=frozenset(["block", "statement"]),
+            target_things=frozenset({"block", "statement"}),
             requires_presence=True,
             allows_multiple=False
         ),
         DirectConnection(
             role="alternative",
             source="if_statement",
-            target_things=frozenset(["block", "if_statement"]),  # else or elif
+            target_things=frozenset({"block", "if_statement"}),  # else or elif
             requires_presence=False,  # else is optional
             allows_multiple=False
         )
-    ])
+    })
 )
 ```
 
@@ -305,14 +304,13 @@ No guessing. No cross-referencing documentation. No lost weeks.
 ## Results: Time Saved, Clarity Gained
 
 **After implementing this design:**
-- **Onboarding:** hours instead of days
 - **Bugs:** caught at validation time, not runtime
 - **Code:** self-documenting (`DirectConnection(role="condition", ...)`)
 - **Design:** accommodates real patterns (multi-category, polymorphic refs)
 
 **Most importantly: nobody else loses a week.**
 
-## The Broader Lesson: Question Inherited Complexity
+## The Broader Lesson: You Should Question Inherited Complexity
 
 Tree-sitter is excellent software built by brilliant people. But its `node-types.json` format evolved from internal implementation details, not external clarity.
 
@@ -357,17 +355,17 @@ The code is [open source on GitHub](https://github.com/knitli/codeweaver-mcp). T
 ## Takeaways
 
 1. **Inherited terminology can be more confusing than the underlying concepts**
-   - Tree-sitter's "named" attribute confused us for days
-   - Our "is_explicit_rule" says exactly what it means
+   - Tree-sitter's "named" attribute confused me for days
+   - My"is_explicit_rule" says exactly what it means
 
 2. **Empirical validation beats intuition**
-   - We thought multi-category was rare (it is: 13.5%)
-   - We didn't know polymorphic refs existed (they do: 7.9-10.3%)
+   - I thought multi-category was rare (it is: 13.5%)
+   - I didn't know polymorphic refs existed (they do: 7.9-10.3%)
 
 3. **Make the implicit explicit**
-   - Category vs Thing (both called "nodes" in tree-sitter)
-   - Direct vs Positional vs Loose (all jumbled in tree-sitter)
-   - Role as semantic purpose (just "field name" in tree-sitter)
+   - Category vs Thing (both called `type` in tree-sitter)
+   - Direct vs Positional (all jumbled in tree-sitter)
+   - Role as semantic purpose (just an unlabeled object key in tree-sitter)
 
 4. **Design for clarity, optimize for understanding**
    - One concept = one name
@@ -380,9 +378,9 @@ The code is [open source on GitHub](https://github.com/knitli/codeweaver-mcp). T
 
 ## The Bottom Line
 
-Developer tools should make complex problems understandable, not add complexity of their own.
+Developer tools should make complex problems understandable, not add complexity on top.
 
-I spent a week confused by tree-sitter's terminology. I spent the next two weeks analyzing 25 languages and redesigning it. Now, every engineer who touches CodeWeaver saves that week I lost.
+I spent a week confused by tree-sitter's terminology. I spent the next week analyzing 25 languages and redesigning it. Now, every engineer who touches CodeWeaver saves that week I lost.
 
 That's a good trade.
 
@@ -407,11 +405,11 @@ For the data nerds (I am one too):
 - 'Named' nodes: ~2,900
 - 'Unnamed' nodes: ~2,100
 - Abstract types (Categories): ~20-100 (explanation below)
+- Extra nodes ('can_be_anywhere'): 16 across all languages, 6 unique -- `comment` is an extra node in all 11 languages where they are in the grammar
 
 **Connection References**: 15,635
 - Direct (fields): 9,606 (761 Category, 8,845 Concrete)
 - Positional (children): 6,029 (621 Category, 5,408 Concrete)
-- Loose (extras): ~50-75 unique across all languages
 
 **Multi-Category Distribution**:
 - 1 category: 637 Things (86.5%)
@@ -426,13 +424,13 @@ For the data nerds (I am one too):
 
 **Analysis Tools**: [Python script in the CodeWeaver repo](https://github.com/knitli/codeweaver-mcp/tree/main/scripts/analyze_grammar_structure.py) results in `https://github.com/knitli/codeweaver-mcp/tree/main/claudedocs/grammar_structure_analysis.md`
 
-**Confidence Level**: High. We parsed every node-types.json file for languages supported by ast-grep, validated against actual grammars, cross-referenced with tree-sitter documentation, and tested on real codebases.
+**Confidence Level**: High. I parsed every node-types.json file for languages supported by ast-grep, validated against actual grammars, cross-referenced with tree-sitter documentation, and tested on real codebases.
 
 ### About Categories (abstract nodes), and Inconsistent Grammars
 
 Tree-sitter grammars have no standardized vocabulary, so whoever wrote the grammar defines the names. This makes working across languages, like with CodeWeaver, much more difficult. The grammar can also represent names with a preceding underscore (like with `_expression`) or without (`expression`) based on how they're used in the grammar. 
 
-So our initial results from 25 languages gave us ~110 abstract types, but a little normalization goes a long way. Not all languages *have* defined Categories -- of the 25, **only 18** define Categories, 6 don't (css, elixir, html, solidity, swift, yaml -- and json has only one,`_value`, so does Nix, `_expression`).
+The initial results from 25 languages gave us ~110 abstract types, but a little normalization goes a long way. Not all languages *have* defined Categories -- of the 25, **only 18** define Categories, 6 don't (css, elixir, html, solidity, swift, yaml -- and json has only one,`_value`, so does Nix, `_expression`).
     - *50* if you simply remove the underscore. 
     - *34* of those belong to *only* one language/grammar. 
     - *7* of those are unique to *C and C++* but no other languages.
@@ -450,6 +448,7 @@ So our initial results from 25 languages gave us ~110 abstract types, but a litt
 |------------------------|------------|
 
 You're likely to see similar patterns across all nodes and edges based on my observations working with the data, but I haven't done the analysis yet. If you look at Categories that are unique to a language, you see that many are slight variations from these, like `type_declaration`, `pattern_expr`, and `expression_statement`.
+
 ---
 
 *This post is part of our technical *Clarity Engineering* series on making developer tools more intuitive.*
