@@ -445,7 +445,6 @@ The initial results from 25 languages gave us ~110 abstract types, but a little 
 | `primary_expression`*  | 8          |
 | `pattern`              | 8          |
 | `literal`              | 4          |
-|------------------------|------------|
 
 You're likely to see similar patterns across all nodes and edges based on my observations working with the data, but I haven't done the analysis yet. If you look at Categories that are unique to a language, you see that many are slight variations from these, like `type_declaration`, `pattern_expr`, and `expression_statement`.
 
