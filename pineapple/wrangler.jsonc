@@ -8,7 +8,7 @@
 	"main": "src/index.js",
 	"route": {
 		"pattern": "ytxf.knitli.com/*",
-		"zone_id": "your-zone-id"
+		"zone_id": "584dbfba8a0f678aad751b7d1d232c9c"
 	},
 	"compatibility_date": "2025-10-08",
 	"observability": {
